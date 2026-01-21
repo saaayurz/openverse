@@ -17,23 +17,18 @@ The goal of OpenVerse is not to rush features, but to:
 
 ## 📦 Project Structure
 
-
-
 openverse/
+├── index.html          # Main entry point (GitHub Pages)
+├── css/
+│   └── style.css       # Global styles
+├── js/
+│   └── app.js          # Theme toggle & interactivity
 │
-├── frontend/ # Client-side code (HTML, CSS, JavaScript)
-│ ├── index.html # Main entry point
-│ ├── css/
-│ │ └── style.css
-│ └── js/
-│ └── app.js
+├── docs/
+│   └── roadmap.md      # Long-term planning
 │
-├── backend/ # Server-side code (future expansion)
+├── backend/            # Future server-side code
+├── assets/
+│   └── images/         # Static assets
 │
-├── docs/ # Documentation & roadmap
-│ └── roadmap.md
-│
-├── assets/ # Images and static resources
-│ └── images/
-│
-└── README.md # Project overview and documentation
+└── README.md           # Project overview & philosophy
