@@ -1,6 +1,4 @@
-/* =====================
-   THEME VARIABLES
-===================== */
+/* ===== THEME VARIABLES ===== */
 
 :root {
     --bg: #f8fafc;
@@ -18,9 +16,7 @@ html[data-theme="dark"] {
     --accent: #38bdf8;
 }
 
-/* =====================
-   BASE STYLES
-===================== */
+/* ===== RESET ===== */
 
 * {
     margin: 0;
@@ -28,45 +24,46 @@ html[data-theme="dark"] {
     box-sizing: border-box;
 }
 
+/* ===== BASE ===== */
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: var(--bg);
     color: var(--text);
-    line-height: 1.6;
-    transition: background-color 0.4s ease, color 0.4s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* =====================
-   HEADER
-===================== */
+/* ===== NAVBAR ===== */
 
-.header {
-    padding: 40px 20px 30px;
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
     background-color: var(--surface);
-    transition: background-color 0.4s ease;
-}
-
-.header-top {
-    max-width: 1100px;
-    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--muted);
 }
 
-.header h1 {
-    font-size: 2.8rem;
+.logo {
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
-.header p {
-    margin-top: 15px;
-    text-align: center;
-    color: var(--muted);
+.nav-center a {
+    margin: 0 12px;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
 }
 
-/* =====================
-   LAYOUT
-===================== */
+.nav-center a.active {
+    color: var(--accent);
+}
+
+/* ===== LAYOUT ===== */
 
 .container {
     max-width: 900px;
@@ -79,36 +76,7 @@ body {
     padding: 25px;
     border-radius: 10px;
     margin-bottom: 25px;
-    transition: background-color 0.4s ease;
 }
-
-.card h2 {
-    margin-bottom: 10px;
-}
-
-/* =====================
-   BUTTON
-===================== */
-
-button {
-    margin-top: 15px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 6px;
-    background-color: var(--accent);
-    color: var(--surface);
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #0284c7;
-}
-
-/* =====================
-   FOOTER
-===================== */
 
 .footer {
     text-align: center;
@@ -116,69 +84,50 @@ button:hover {
     color: var(--muted);
 }
 
-/* =====================
-   THEME TOGGLE
-===================== */
+/* ===== ROADMAP ===== */
 
-.theme-toggle {
-    display: flex;
-    align-items: center;
+.roadmap {
+    list-style: none;
 }
+
+.roadmap li {
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    background-color: var(--bg);
+}
+
+.roadmap li.done {
+    color: #22c55e;
+}
+
+.roadmap li.active {
+    color: var(--accent);
+    font-weight: bold;
+}
+
+/* ===== THEME TOGGLE ===== */
 
 .toggle-track {
     position: relative;
-    width: 135px;
-    height: 40px;
+    width: 120px;
+    height: 36px;
     background: var(--bg);
     border-radius: 30px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     padding: 0 10px;
     cursor: pointer;
-}
-
-.toggle-track .icon {
-    font-size: 1rem;
-    z-index: 2;
 }
 
 .toggle-thumb {
     position: absolute;
     top: 4px;
     left: 4px;
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     background: var(--accent);
     border-radius: 50%;
-    transition: transform 0.35s cubic-bezier(.4,0,.2,1);
-}
-
-/* =====================
-   ROADMAP
-===================== */
-
-.roadmap {
-    list-style: none;
-    padding-left: 0;
-}
-
-.roadmap li {
-    padding: 12px 15px;
-    margin-bottom: 10px;
-    border-radius: 6px;
-    background-color: var(--bg);
-    color: var(--text);
-    font-size: 0.95rem;
-}
-
-.roadmap li.done {
-    background-color: rgba(34, 197, 94, 0.15);
-    color: #22c55e;
-}
-
-.roadmap li.active {
-    background-color: rgba(56, 189, 248, 0.15);
-    color: var(--accent);
-    font-weight: bold;
+    transition: transform 0.3s ease;
 }
