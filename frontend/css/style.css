@@ -3,19 +3,19 @@
 ===================== */
 
 :root {
-    --bg: #0f172a;
-    --surface: #020617;
-    --text: #e5e7eb;
-    --muted: #94a3b8;
-    --accent: #38bdf8;
-}
-
-html[data-theme="light"] {
     --bg: #f8fafc;
     --surface: #ffffff;
     --text: #0f172a;
     --muted: #475569;
     --accent: #0ea5e9;
+}
+
+html[data-theme="dark"] {
+    --bg: #0f172a;
+    --surface: #020617;
+    --text: #e5e7eb;
+    --muted: #94a3b8;
+    --accent: #38bdf8;
 }
 
 /* =====================
@@ -37,24 +37,36 @@ body {
 }
 
 /* =====================
-   LAYOUT
+   HEADER
 ===================== */
 
 .header {
-    text-align: center;
-    padding: 60px 20px;
+    padding: 40px 20px 30px;
     background-color: var(--surface);
     transition: background-color 0.4s ease;
 }
 
+.header-top {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .header h1 {
-    font-size: 3rem;
+    font-size: 2.8rem;
 }
 
 .header p {
-    margin-top: 10px;
+    margin-top: 15px;
+    text-align: center;
     color: var(--muted);
 }
+
+/* =====================
+   LAYOUT
+===================== */
 
 .container {
     max-width: 900px;
@@ -109,27 +121,25 @@ button:hover {
 ===================== */
 
 .theme-toggle {
-    margin-top: 25px;
     display: flex;
-    justify-content: center;
+    align-items: center;
 }
 
 .toggle-track {
     position: relative;
-    width: 150px;
-    height: 44px;
+    width: 135px;
+    height: 40px;
     background: var(--bg);
     border-radius: 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 14px;
+    padding: 0 10px;
     cursor: pointer;
-    transition: background-color 0.4s ease;
 }
 
 .toggle-track .icon {
-    font-size: 1.1rem;
+    font-size: 1rem;
     z-index: 2;
 }
 
@@ -137,8 +147,8 @@ button:hover {
     position: absolute;
     top: 4px;
     left: 4px;
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     background: var(--accent);
     border-radius: 50%;
     transition: transform 0.35s cubic-bezier(.4,0,.2,1);

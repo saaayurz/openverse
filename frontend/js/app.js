@@ -3,10 +3,16 @@ const toggle = document.getElementById("themeToggle");
 const thumb = document.querySelector(".toggle-thumb");
 const startBtn = document.getElementById("startBtn");
 
-const themes = ["dark", "system", "light"];
-let currentIndex = 1; // default = system
+/*
+  Theme order (as requested):
+  0 → light
+  1 → dark
+  2 → system
+*/
+const themes = ["light", "dark", "system"];
+let currentIndex = 0;
 
-// Load saved theme
+// Load saved preference
 const savedTheme = localStorage.getItem("theme");
 if (savedTheme && themes.includes(savedTheme)) {
     currentIndex = themes.indexOf(savedTheme);
@@ -40,5 +46,6 @@ function applyTheme() {
 }
 
 function moveThumb() {
-    thumb.style.transform = `translateX(${currentIndex * 50}px)`;
+    // 0 = light, 1 = dark, 2 = system
+    thumb.style.transform = `translateX(${currentIndex * 45}px)`;
 }
