@@ -1,168 +1,83 @@
-/* ===== THEME VARIABLES ===== */
-
+/* ===== THEME ===== */
 :root {
-    --bg: #f8fafc;
-    --surface: #ffffff;
-    --text: #0f172a;
-    --muted: #475569;
-    --accent: #0ea5e9;
+  --bg:#f8fafc; --surface:#ffffff; --text:#0f172a;
+  --muted:#475569; --accent:#0ea5e9;
 }
-
 html[data-theme="dark"] {
-    --bg: #0f172a;
-    --surface: #020617;
-    --text: #e5e7eb;
-    --muted: #94a3b8;
-    --accent: #38bdf8;
+  --bg:#0f172a; --surface:#020617; --text:#e5e7eb;
+  --muted:#94a3b8; --accent:#38bdf8;
 }
 
 /* ===== RESET ===== */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box}
 
 /* ===== BASE ===== */
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--bg);
-    color: var(--text);
-    transition: background-color 0.3s ease, color 0.3s ease;
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg); color:var(--text);
+  transition:.3s;
 }
 
-/* ===== NAVBAR ===== */
-
-.navbar {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background-color: var(--surface);
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 20px;
-    border-bottom: 1px solid var(--muted);
+/* ===== NAV ===== */
+.navbar{
+  position:sticky; top:0; z-index:100;
+  display:flex; align-items:center; gap:12px;
+  background:var(--surface);
+  padding:14px 18px;
+  border-bottom:1px solid var(--muted);
 }
-
-.logo {
-    font-weight: bold;
-    font-size: 1.2rem;
+.logo{font-weight:bold;font-size:1.2rem}
+.nav-center{
+  display:flex; gap:16px; margin-left:auto;
 }
-
-.nav-center {
-    display: flex;
-    gap: 16px;
+.nav-center a{
+  text-decoration:none; color:var(--text);
 }
-
-.nav-center a {
-    text-decoration: none;
-    color: var(--text);
-    font-weight: 500;
-}
-
-.nav-center a.active {
-    color: var(--accent);
+.nav-center a.active{color:var(--accent)}
+.hamburger{
+  display:none; font-size:1.5rem;
+  background:none; border:none; cursor:pointer;
 }
 
 /* ===== LAYOUT ===== */
-
-.container {
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 0 16px;
+.container{max-width:900px;margin:30px auto;padding:0 16px}
+.card{
+  background:var(--surface); padding:20px;
+  border-radius:10px; margin-bottom:20px;
 }
-
-.card {
-    background-color: var(--surface);
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.footer {
-    text-align: center;
-    padding: 20px;
-    color: var(--muted);
-}
+.footer{text-align:center;padding:20px;color:var(--muted)}
 
 /* ===== ROADMAP ===== */
-
-.roadmap {
-    list-style: none;
+.roadmap{list-style:none}
+.roadmap li{
+  padding:10px;margin-bottom:8px;
+  border-radius:6px;background:var(--bg)
 }
-
-.roadmap li {
-    padding: 10px;
-    margin-bottom: 8px;
-    border-radius: 6px;
-    background-color: var(--bg);
-}
-
-.roadmap li.done {
-    color: #22c55e;
-}
-
-.roadmap li.active {
-    color: var(--accent);
-    font-weight: bold;
-}
+.roadmap .done{color:#22c55e}
+.roadmap .active{color:var(--accent);font-weight:bold}
 
 /* ===== THEME TOGGLE ===== */
-
-.toggle-track {
-    position: relative;
-    width: 120px;
-    height: 36px;
-    background: var(--bg);
-    border-radius: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10px;
-    cursor: pointer;
+.toggle-track{
+  position:relative;width:120px;height:36px;
+  background:var(--bg);border-radius:30px;
+  display:flex;align-items:center;
+  justify-content:space-between;padding:0 10px;
+  cursor:pointer;
+}
+.toggle-thumb{
+  position:absolute;top:4px;left:4px;
+  width:28px;height:28px;border-radius:50%;
+  background:var(--accent);
+  transition:.3s;
 }
 
-.toggle-thumb {
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    width: 28px;
-    height: 28px;
-    background: var(--accent);
-    border-radius: 50%;
-    transition: transform 0.3s ease;
-}
-
-/* ===== MOBILE RESPONSIVE ===== */
-
-@media (max-width: 768px) {
-
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    .nav-center {
-        width: 100%;
-        justify-content: space-around;
-        padding-top: 10px;
-        border-top: 1px solid var(--muted);
-    }
-
-    .logo {
-        font-size: 1.1rem;
-    }
-
-    .container {
-        margin-top: 20px;
-    }
-
-    .card {
-        padding: 16px;
-    }
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+  .hamburger{display:block}
+  .nav-center{
+    display:none; width:100%;
+    flex-direction:column; gap:12px;
+    padding-top:12px; border-top:1px solid var(--muted)
+  }
+  .nav-center.open{display:flex}
 }

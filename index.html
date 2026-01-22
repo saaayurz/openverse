@@ -1,75 +1,67 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <title>OpenVerse</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <title>OpenVerse</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="nav-left">
-            <span class="logo">OpenVerse</span>
-        </div>
+<nav class="navbar">
+  <div class="nav-left">
+    <span class="logo">OpenVerse</span>
+  </div>
 
-        <div class="nav-center">
-            <a href="index.html" class="active">Home</a>
-            <a href="about.html">About</a>
-            <a href="#roadmap">Roadmap</a>
-        </div>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    ☰
+  </button>
 
-        <div class="nav-right">
-            <div class="theme-toggle" id="themeToggle">
-                <div class="toggle-track">
-                    <span class="icon">☀️</span>
-                    <span class="icon">🌙</span>
-                    <span class="icon">🖥️</span>
-                    <div class="toggle-thumb"></div>
-                </div>
-            </div>
-        </div>
-    </nav>
+  <div class="nav-center" id="navMenu">
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">About</a>
+    <a href="changelog.html">Changelog</a>
+    <a href="#roadmap">Roadmap</a>
+  </div>
 
-    <!-- CONTENT -->
-    <main class="container">
+  <div class="nav-right">
+    <div class="theme-toggle" id="themeToggle">
+      <div class="toggle-track">
+        <span class="icon">☀️</span>
+        <span class="icon">🌙</span>
+        <span class="icon">🖥️</span>
+        <div class="toggle-thumb"></div>
+      </div>
+    </div>
+  </div>
+</nav>
 
-        <section class="card">
-            <h2>🚀 What is OpenVerse?</h2>
-            <p>
-                OpenVerse is a long-term web platform built to learn,
-                experiment, and grow through real-world development.
-            </p>
-        </section>
+<main class="container">
+  <section class="card">
+    <h2>🚀 What is OpenVerse?</h2>
+    <p>
+      OpenVerse is a long-term, evolving web platform built in public to
+      learn real-world development step by step.
+    </p>
+  </section>
 
-        <section class="card">
-            <h2>🧠 Current Focus</h2>
-            <p>
-                Building strong frontend foundations with clean structure,
-                real features, and public iteration.
-            </p>
-        </section>
+  <section class="card" id="roadmap">
+    <h2>🗺️ Roadmap</h2>
+    <ul class="roadmap">
+      <li class="done">v0.1 — Setup & UI</li>
+      <li class="done">v0.2 — Theme system</li>
+      <li class="done">v0.3 — About page</li>
+      <li class="done">v0.4 — Navigation</li>
+      <li class="active">v0.5 — Mobile UX + Changelog</li>
+      <li>v1.0 — Backend direction</li>
+    </ul>
+  </section>
+</main>
 
-        <section class="card" id="roadmap">
-            <h2>🗺️ Roadmap</h2>
-            <ul class="roadmap">
-                <li class="done">v0.1 — Project setup</li>
-                <li class="done">v0.2 — Theme system</li>
-                <li class="done">v0.3 — About & roadmap</li>
-                <li class="active">v0.4 — Navigation bar</li>
-                <li>v0.5 — Mobile polish</li>
-                <li>v1.0 — Backend integration</li>
-            </ul>
-        </section>
+<footer class="footer">
+  <p>© 2026 OpenVerse</p>
+</footer>
 
-    </main>
-
-    <footer class="footer">
-        <p>© 2026 OpenVerse</p>
-    </footer>
-
-    <script src="js/app.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
